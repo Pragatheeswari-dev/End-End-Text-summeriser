@@ -14,7 +14,7 @@ list_of_files = [
     f"src/{project_name}/__init__.py", # __init__.py is contructor file, for installation  of local packages.
     f"src/{project_name}/components/__init__.py",
     f"src/{project_name}/utils/__init__.py",
-    f"src/{project_name}/common.py",
+    f"src/{project_name}/utils/common.py",
     f"src/{project_name}/logging/__init__.py",
     f"src/{project_name}/config/__init__.py",
     f"src/{project_name}/config/configuration.py",
