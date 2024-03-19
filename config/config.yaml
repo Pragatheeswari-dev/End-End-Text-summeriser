@@ -21,11 +21,11 @@ data_validation: # data validation configuration
   ALL_REQUIRED_FILES: ["train", "test", "validation"]
 
 
-
+# transformed data files are automatically generated when transformation is enabled.
 data_transformation:
-  root_dir: artifacts/data_transformation
-  data_path: artifacts/data_ingestion/samsum_dataset
-  tokenizer_name: google/pegasus-cnn_dailymail
+  root_dir: artifacts/data_transformation # root directory of data transformation
+  data_path: artifacts/data_ingestion/samsum_dataset # path to data transformation directory containing training data.
+  tokenizer_name: google/pegasus-cnn_dailymail # name of the tokenizer model to use for transforming.
 
 
 
