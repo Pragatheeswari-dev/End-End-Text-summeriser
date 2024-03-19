@@ -29,7 +29,8 @@ data_transformation:
 
 
 
-
+# Training
+# will create folder inside the artifacts, train on the transformed dataset and save the model as a checkpoint
 model_trainer:
   root_dir: artifacts/model_trainer
   data_path: artifacts/data_transformation/samsum_dataset
