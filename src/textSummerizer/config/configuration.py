@@ -3,7 +3,10 @@
 
 from textSummerizer.constants import *
 from textSummerizer.utils.common import read_yaml, create_directories
-from textSummerizer.entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig)
+from textSummerizer.entity import (DataIngestionConfig,
+                                   DataValidationConfig, 
+                                   DataTransformationConfig,
+                                   ModelTrainerConfig)
 
 
 
@@ -71,3 +74,33 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+
+
+
+
+    # 4. configuration manager in src config.
+    
+    #  get the model config 
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer # get the model config from the config file
+        params = self.params.TrainingArguments # get the params from the params file
+
+        create_directories([config.root_dir]) # create the root directory
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            model_ckpt = config.model_ckpt,
+            num_train_epochs = params.num_train_epochs,
+            warmup_steps = params.warmup_steps,
+            per_device_train_batch_size = params.per_device_train_batch_size,
+            weight_decay = params.weight_decay,
+            logging_steps = params.logging_steps,
+            evaluation_strategy = params.evaluation_strategy,
+            eval_steps = params.eval_steps,
+            save_steps = params.save_steps,
+            gradient_accumulation_steps = params.gradient_accumulation_steps
+        )
+
+        return model_trainer_config # return the model config set in the config file
+
