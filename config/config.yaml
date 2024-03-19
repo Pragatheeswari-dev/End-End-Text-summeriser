@@ -14,10 +14,10 @@ data_ingestion:
   unzip_dir: artifacts/data_ingestion
 
 
-
-data_validation:
+# verifying the data files format before sending them to the model
+data_validation: # data validation configuration
   root_dir: artifacts/data_validation
-  STATUS_FILE: artifacts/data_validation/status.txt
+  STATUS_FILE: artifacts/data_validation/status.txt # status file will check status of the data file and return true or false
   ALL_REQUIRED_FILES: ["train", "test", "validation"]
 
 

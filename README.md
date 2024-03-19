@@ -13,4 +13,7 @@ Update:
 7. main.py
 8. app.py
 
+Components:
 Data Ingestion 
+Data Validation 
+Data Transformation
