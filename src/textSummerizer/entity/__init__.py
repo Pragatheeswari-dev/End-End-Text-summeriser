@@ -46,3 +46,14 @@ class ModelTrainerConfig:
     eval_steps: int # default number of steps between evaluation
     save_steps: float # default number of steps between saving checkpoints
     gradient_accumulation_steps: int # default number of steps between gradient accumulation
+
+
+# 3. define the entity for Model Evaluation
+    
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path # root directory of the project
+    data_path: Path # path to the data
+    model_path: Path # path to the model
+    tokenizer_path: Path # path to the tokenizer
+    metric_file_name: Path # path to the metric file
